@@ -1,0 +1,22 @@
+#!/usr/bin/env perl
+
+use warnings;
+use strict;
+#$ARGV[0] is for the name of the list file
+my $filename=$ARGV[0];
+open(LIST,"<",$filename);
+my @list =<LIST>;
+close(LIST);
+foreach my $index(@list)
+{
+   chomp $index;
+    open(DATA,"<",$index);
+    my @data =<DATA>;
+    print @data;
+    close(DATA);
+    open(DATA,">",$index)|| die "cant open new\n";
+    print DATA "`ifdef JESD204B_CONFIG\n";
+    print DATA @data;
+    print DATA "`endif";
+    close(DATA);
+}
