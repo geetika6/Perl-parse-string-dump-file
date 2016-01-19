@@ -78,3 +78,7 @@ This opens 2 files and rescpectively searches for the string _reg and clk in the
 5. A new version of this perl script to include a single sub routine to do these multiple file reading
 Using exception handling in perl
 And then dump into a file syncflop.txt in a particular fashion
+
+6. Perl add_text_start_end_file_read_list
+This perl file loads a list of files in which text is to be added in start and end of file.
+
